@@ -1,2 +1,3 @@
 # nsp2022-conference
-XV. International Conference on Nuclear Structure Properties
+
+The *XV. International Conference on Nuclear Structure Properties*
