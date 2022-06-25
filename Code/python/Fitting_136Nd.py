@@ -37,10 +37,10 @@ energies_exp_136Nd_higher = np.concatenate(
     (Nd136.Energy_Band1_Higher, Nd136.Energy_Band2_Higher, Nd136.Energy_Band3_Higher))
 
 
-guess136Nd_lower = [1.0/(2.0*10.0), 1.0/(2.0*25.0), 1.0/(2.0*1.0)]
+guess136Nd_higher = [1.0/(2.0*10.0), 1.0/(2.0*25.0), 1.0/(2.0*1.0)]
 
 fit_parameters_136Nd_higher, _ = curve_fit(
-    Models.Model_Energy, x_data_136Nd_higher, energies_exp_136Nd_higher, p0=guess136Nd_lower, bounds=BOUNDS)
+    Models.Model_Energy, x_data_136Nd_higher, energies_exp_136Nd_higher, p0=guess136Nd_higher, bounds=BOUNDS)
 
 # evaluate the chi_2 function
 e1_higher = fit_parameters_136Nd_higher[0]
