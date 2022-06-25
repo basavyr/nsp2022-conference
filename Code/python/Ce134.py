@@ -31,7 +31,7 @@ def MeV(energy):
     return np.round(energy / 1000.0, 3)
 
 
-# final nomenclature that will be used within the fitting procedure
+# Isomer State
 Energy_Band1_Isomer = [MeV(e-band8_band_head_energy)
                        for e in band8_energy_exp[1:]]
 Energy_Band2_Isomer = [MeV(e-band8_band_head_energy)
@@ -43,6 +43,7 @@ Phonons_Band2_Isomer = [1 for _ in Energy_Band2_Isomer]
 Energy_Band_Head_Isomer = band8_band_head_energy
 Spin_Band_Head_Isomer = band8_band_head_spin
 
+# Deformed State
 Energy_Band1_Deformed = [MeV(e-band9_band_head_energy)
                          for e in band9_energy_exp[1:]]
 Energy_Band2_Deformed = [MeV(e-band9_band_head_energy)
