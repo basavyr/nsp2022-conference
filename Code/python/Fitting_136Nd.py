@@ -71,7 +71,7 @@ for i1 in np.arange(10, 125, 15):
             chi_i = do_fit_higher(guess_i)[0]
             mois_i = do_fit_higher(guess_i)[1]
             if(chi_i < min_chi):
-                print([1.0/(2.0*e) for e in mois_i],chi_i)
+                print([1.0/(2.0*e) for e in mois_i], chi_i)
                 min_chi = chi_i
 
 
@@ -103,10 +103,22 @@ def do_fit_lower(guess):
     e1_lower = fit_parameters_136Nd_lower[0]
     e2_lower = fit_parameters_136Nd_lower[1]
     e3_lower = fit_parameters_136Nd_lower[2]
-    print(1/(2.0*e1_lower))
-    print(1/(2.0*e2_lower))
-    print(1/(2.0*e3_lower))
+    # print(1/(2.0*e1_lower))
+    # print(1/(2.0*e2_lower))
+    # print(1/(2.0*e3_lower))
     x = chi2(energies_exp_136Nd_lower, Models.Model_Energy(
         x_data_136Nd_lower, e1_lower, e2_lower, e3_lower))
-    return x
+    return x, [e1_lower, e2_lower, e3_lower]
 
+
+# proper guess
+min_chi = Models.MAX_VAL
+for i1 in np.arange(10, 125, 15):
+    for i2 in np.arange(11, 125, 15):
+        for i3 in np.arange(12, 125, 15):
+            guess_i = [1.0/(2.0*i1), 1.0/(2.0*i2), 1.0/(2.0*i3)]
+            chi_i = do_fit_lower(guess_i)[0]
+            mois_i = do_fit_lower(guess_i)[1]
+            if(chi_i < min_chi):
+                print([1.0/(2.0*e) for e in mois_i], chi_i)
+                min_chi = chi_i
