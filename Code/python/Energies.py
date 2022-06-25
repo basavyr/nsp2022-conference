@@ -31,6 +31,7 @@ def Wobbling_Frequency(spin, A1, A2, A3):
     t1_2 = np.power(t1, 2)
     t2_2 = np.power(t2, 2)
 
+    # does NOT work in the Model Fit
     # if(t1_2 <= t2_2):
     #     return MAX_VAL
 
@@ -47,6 +48,8 @@ def Absolute_Energy(spin, phonon_number, A1, A2, A3):
     n = phonon_number
 
     h_omega_wob = Wobbling_Frequency(I, A1, A2, A3)
+
+    # does NOT work in the Model Fit
     # if(h_omega_wob == MAX_VAL):
     #     return MAX_VAL
 
@@ -58,7 +61,7 @@ def Absolute_Energy(spin, phonon_number, A1, A2, A3):
     return energy
 
 
-def Excitation_Energy(spin, phonon_number, A1, A2, A3):
+def Excitation_Energy(spin, phonon_number, band_head, A1, A2, A3):
     """
     Calculate the excitation energy for a given state 
     The excitation energy is evaluated as the difference between the absolute energy of that state and the band-head energy
@@ -67,7 +70,10 @@ def Excitation_Energy(spin, phonon_number, A1, A2, A3):
 
     # first evaluate the energy of the band head
     # put by hand for the 10^+ level in 134Ce
-    E_0 = Absolute_Energy(10, 0, A1, A2, A3)
+    I_0 = band_head
+    E_0 = Absolute_Energy(I_0, 0, A1, A2, A3)
+
+    # does NOT work in the Model Fit
     # if(E_0 == MAX_VAL):
     #     return MAX_VAL
 
@@ -76,6 +82,8 @@ def Excitation_Energy(spin, phonon_number, A1, A2, A3):
 
     # evaluate the absolute energy of the I level state
     E_I = Absolute_Energy(I, n, A1, A2, A3)
+
+    # does NOT work in the Model Fit
     # if(E_I == MAX_VAL):
     #     return MAX_VAL
 
@@ -89,8 +97,8 @@ def Model_Energy(x_data, A1, A2, A3):
     """
 
     # unpack the x-data in terms of the spins and the phonon numbers
-    spins, phonons = x_data
+    spins, phonons, band_heads = x_data
 
-    local_energies = Excitation_Energy(spins, phonons, A1, A2, A3)
+    local_energies = Excitation_Energy(spins, phonons, band_heads, A1, A2, A3)
 
     return local_energies
