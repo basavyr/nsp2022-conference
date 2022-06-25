@@ -1,15 +1,8 @@
 import math
 import numpy as np
 
-# local imports
-import Ce134
-
 # escape value to be used in case of math failure
 MAX_VAL = 6969696969
-# add limits for the inertia factors
-A_MIN = 0.004
-A_MAX = 0.5
-# these limits correspond to 1<=MOI<=125 \hbar^2MeV^-1
 
 
 def Wobbling_Frequency(spin, A1, A2, A3):
