@@ -68,8 +68,8 @@ def Excitation_Energy(spin, phonon_number, A1, A2, A3):
     # first evaluate the energy of the band head
     # put by hand for the 10^+ level in 134Ce
     E_0 = Absolute_Energy(10, 0, A1, A2, A3)
-    if(E_0 == MAX_VAL):
-        return MAX_VAL
+    # if(E_0 == MAX_VAL):
+    #     return MAX_VAL
 
     I = spin
     n = phonon_number
