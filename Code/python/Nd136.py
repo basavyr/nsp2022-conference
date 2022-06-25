@@ -38,6 +38,9 @@ Energy_Band1_Lower = np.asarray(
     [MeV(e-Band_Head_Energy_Lower) for e in band3_energy_exp[1:]])
 Energy_Band2_Lower = np.asarray(
     [MeV(e-Band_Head_Energy_Lower) for e in band4_energy_exp])
+Phonons_Band1_Lower = [0 for _ in Energy_Band1_Lower]
+Phonons_Band2_Lower = [1 for _ in Energy_Band2_Lower]
+
 
 # data for Structure 2
 Spins_Band1_Higher = band2_spins[1:]
@@ -46,8 +49,11 @@ Spins_Band3_Higher = band6_spins
 Band_Head_Spin_Higher = band2_spins[0]
 Band_Head_Energy_Higher = band2_energy_exp[0]
 Energy_Band1_Higher = np.asarray(
-    MeV([e-Band_Head_Energy_Higher]) for e in band2_energy_exp[1:])
+    [MeV(e-Band_Head_Energy_Higher) for e in band2_energy_exp[1:]])
 Energy_Band2_Higher = np.asarray(
-    MeV([e-Band_Head_Energy_Higher]) for e in band5_energy_exp)
+    [MeV(e-Band_Head_Energy_Higher) for e in band5_energy_exp])
 Energy_Band3_Higher = np.asarray(
-    MeV([e-Band_Head_Energy_Higher]) for e in band6_energy_exp)
+    [MeV(e-Band_Head_Energy_Higher) for e in band6_energy_exp])
+Phonons_Band1_Higher = [0 for _ in Energy_Band1_Higher]
+Phonons_Band2_Higher = [1 for _ in Energy_Band2_Higher]
+Phonons_Band3_Higher = [2 for _ in Energy_Band3_Higher]
