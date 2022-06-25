@@ -54,3 +54,9 @@ Phonons_Band1_Deformed = [0 for _ in Energy_Band1_Deformed]
 Phonons_Band2_Deformed = [1 for _ in Energy_Band2_Deformed]
 Energy_Band_Head_Deformed = band9_band_head_energy
 Spin_Band_Head_Deformed = band9_band_head_spin
+
+if __name__ == '__main__':
+    print(Energy_Band1_Isomer)
+    print(Energy_Band2_Isomer)
+    print(Energy_Band1_Deformed)
+    print(Energy_Band2_Deformed)
