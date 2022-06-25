@@ -18,7 +18,8 @@ def chi2(exp_data,th_data):
         e=np.power(exp_data[i]-th_data[i],2)
         sum_0+=e/exp_data[i]
     chi=1.0/len(exp_data+1)*sum_0
-    print(np.sqrt(chi))
+    # print(np.sqrt(chi))
+    return chi
 
 
 ############################################################################
@@ -40,6 +41,10 @@ e1_isomer=fit_parameters_134Ce_isomer[0]
 e2_isomer=fit_parameters_134Ce_isomer[1]
 e3_isomer=fit_parameters_134Ce_isomer[2]
 chi2(experimental_energies_134Ce_isomer,Models.Model_Energy(x_data_134Ce_isomer,e1_isomer,e2_isomer,e3_isomer))
+print("Isomer")
+print(e1_isomer)
+print(e2_isomer)
+print(e3_isomer)
 ############################################################################
 ############################################################################
 ############################################################################
@@ -63,6 +68,10 @@ e1_deformed=fit_parameters_134Ce_deformed[0]
 e2_deformed=fit_parameters_134Ce_deformed[1]
 e3_deformed=fit_parameters_134Ce_deformed[2]
 chi2(experimental_energies_134Ce_deformed,Models.Model_Energy(x_data_134Ce_deformed,e1_deformed,e2_deformed,e3_deformed))
+print("Deformed")
+print(e1_deformed)
+print(e2_deformed)
+print(e3_deformed)
 ############################################################################
 ############################################################################
 ############################################################################
