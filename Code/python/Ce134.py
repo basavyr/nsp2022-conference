@@ -40,6 +40,8 @@ Spins_Band1_Isomer = band8_spins[1:]
 Spins_Band2_Isomer = band10_spins
 Phonons_Band1_Isomer = [0 for _ in Energy_Band1_Isomer]
 Phonons_Band2_Isomer = [1 for _ in Energy_Band2_Isomer]
+Energy_Band_Head_Isomer = band8_band_head_energy
+Spin_Band_Head_Isomer = band8_band_head_spin
 
 Energy_Band1_Deformed = [MeV(e-band9_band_head_energy)
                          for e in band9_energy_exp[1:]]
@@ -49,3 +51,5 @@ Spins_Band1_Deformed = band9_spins[1:]
 Spins_Band2_Deformed = band7_spins
 Phonons_Band1_Deformed = [0 for _ in Energy_Band1_Isomer]
 Phonons_Band2_Deformed = [1 for _ in Energy_Band2_Isomer]
+Energy_Band_Head_Deformed = band9_band_head_energy
+Spin_Band_Head_Deformed = band9_band_head_spin
