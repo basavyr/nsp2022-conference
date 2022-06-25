@@ -18,7 +18,7 @@ def chi2(exp_data, th_data):
         e = np.power(exp_data[i]-th_data[i], 2)
         sum_0 += e/exp_data[i]
     chi = 1.0/len(exp_data+1)*sum_0
-    print(np.sqrt(chi))
+    # print(np.sqrt(chi))
     return chi
 
 
@@ -37,22 +37,44 @@ energies_exp_136Nd_higher = np.concatenate(
     (Nd136.Energy_Band1_Higher, Nd136.Energy_Band2_Higher, Nd136.Energy_Band3_Higher))
 
 
-guess136Nd_higher = [1.0/(2.0*10.0), 1.0/(2.0*25.0), 1.0/(2.0*1.0)]
-
-
 def do_fit_higher(guess):
     fit_parameters_136Nd_higher, _ = curve_fit(
-        Models.Model_Energy, x_data_136Nd_higher, energies_exp_136Nd_higher, p0=guess136Nd_higher, bounds=BOUNDS)
+        Models.Model_Energy, x_data_136Nd_higher, energies_exp_136Nd_higher, p0=guess, bounds=BOUNDS)
 
     # evaluate the chi_2 function
     e1_higher = fit_parameters_136Nd_higher[0]
     e2_higher = fit_parameters_136Nd_higher[1]
     e3_higher = fit_parameters_136Nd_higher[2]
-    print(1/(2.0*e1_higher))
-    print(1/(2.0*e2_higher))
-    print(1/(2.0*e3_higher))
-    chi2(energies_exp_136Nd_higher, Models.Model_Energy(
+    # print(1/(2.0*e1_higher))
+    # print(1/(2.0*e2_higher))
+    # print(1/(2.0*e3_higher))
+    x = chi2(energies_exp_136Nd_higher, Models.Model_Energy(
         x_data_136Nd_higher, e1_higher, e2_higher, e3_higher))
+    return x, [e1_higher, e2_higher, e3_higher]
+
+
+# proper guess
+min_chi = Models.MAX_VAL
+for i1 in np.arange(10, 125, 15):
+    for i2 in np.arange(11, 125, 15):
+        for i3 in np.arange(12, 125, 15):
+            # if(i1 != i2):
+            #     if(i1 != i3):
+            #         if(i2 != i3):
+            #             guess_i = [1.0/(2.0*i1), 1.0/(2.0*i2), 1.0/(2.0*i3)]
+            #             chi_i = do_fit_higher(guess_i)[0]
+            #             mois_i = do_fit_higher(guess_i)[1]
+            #             if(chi_i < min_chi):
+            #                 print([1.0/(2.0*e) for e in mois_i])
+            #                 min_chi = chi_i
+            guess_i = [1.0/(2.0*i1), 1.0/(2.0*i2), 1.0/(2.0*i3)]
+            chi_i = do_fit_higher(guess_i)[0]
+            mois_i = do_fit_higher(guess_i)[1]
+            if(chi_i < min_chi):
+                print([1.0/(2.0*e) for e in mois_i],chi_i)
+                min_chi = chi_i
+
+
 ############################################################################
 ############################################################################
 ############################################################################
@@ -73,9 +95,6 @@ energies_exp_136Nd_lower = np.concatenate(
     (Nd136.Energy_Band1_Lower, Nd136.Energy_Band2_Lower))
 
 
-guess136Nd_lower = [1.0/(2.0*10.0), 1.0/(2.0*25.0), 1.0/(2.0*1.0)]
-
-
 def do_fit_lower(guess):
     fit_parameters_136Nd_lower, _ = curve_fit(
         Models.Model_Energy, x_data_136Nd_lower, energies_exp_136Nd_lower, p0=guess, bounds=BOUNDS)
@@ -90,3 +109,4 @@ def do_fit_lower(guess):
     x = chi2(energies_exp_136Nd_lower, Models.Model_Energy(
         x_data_136Nd_lower, e1_lower, e2_lower, e3_lower))
     return x
+
