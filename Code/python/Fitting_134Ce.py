@@ -1,4 +1,3 @@
-from ntpath import join
 import numpy as np
 from scipy.optimize import curve_fit
 
@@ -20,7 +19,6 @@ def chi2(exp_data,th_data):
         sum_0+=e/exp_data[i]
     chi=1.0/len(exp_data+1)*sum_0
     print(np.sqrt(chi))
-    # return np.sqrt(chi)
 
 
 ############################################################################
