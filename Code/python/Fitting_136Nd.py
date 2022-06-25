@@ -53,7 +53,6 @@ def do_fit_higher(guess):
     return x, [e1_higher, e2_higher, e3_higher]
 
 
-# proper guess
 min_chi = Models.MAX_VAL
 for i1 in np.arange(10, 125, 15):
     for i2 in np.arange(11, 125, 15):
@@ -111,7 +110,6 @@ def do_fit_lower(guess):
     return x, [e1_lower, e2_lower, e3_lower]
 
 
-# proper guess
 min_chi = Models.MAX_VAL
 for i1 in np.arange(10, 125, 15):
     for i2 in np.arange(11, 125, 15):
