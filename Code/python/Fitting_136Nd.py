@@ -53,26 +53,27 @@ def do_fit_higher(guess):
     return x, [e1_higher, e2_higher, e3_higher]
 
 
-min_chi = Models.MAX_VAL
-for i1 in np.arange(10, 125, 15):
-    for i2 in np.arange(11, 125, 15):
-        for i3 in np.arange(12, 125, 15):
-            # if(i1 != i2):
-            #     if(i1 != i3):
-            #         if(i2 != i3):
-            #             guess_i = [1.0/(2.0*i1), 1.0/(2.0*i2), 1.0/(2.0*i3)]
-            #             chi_i = do_fit_higher(guess_i)[0]
-            #             mois_i = do_fit_higher(guess_i)[1]
-            #             if(chi_i < min_chi):
-            #                 print([1.0/(2.0*e) for e in mois_i])
-            #                 min_chi = chi_i
-            guess_i = [1.0/(2.0*i1), 1.0/(2.0*i2), 1.0/(2.0*i3)]
-            chi_i = do_fit_higher(guess_i)[0]
-            mois_i = do_fit_higher(guess_i)[1]
-            if(chi_i < min_chi):
-                print([1.0/(2.0*e) for e in mois_i], chi_i)
-                min_chi = chi_i
-
+print('Higher')
+# min_chi = Models.MAX_VAL
+# for i1 in np.arange(10, 125, 15):
+#     for i2 in np.arange(11, 125, 15):
+#         for i3 in np.arange(12, 125, 15):
+#             # if(i1 != i2):
+#             #     if(i1 != i3):
+#             #         if(i2 != i3):
+#             #             guess_i = [1.0/(2.0*i1), 1.0/(2.0*i2), 1.0/(2.0*i3)]
+#             #             chi_i = do_fit_higher(guess_i)[0]
+#             #             mois_i = do_fit_higher(guess_i)[1]
+#             #             if(chi_i < min_chi):
+#             #                 print([1.0/(2.0*e) for e in mois_i])
+#             #                 min_chi = chi_i
+#             guess_i = [1.0/(2.0*i1), 1.0/(2.0*i2), 1.0/(2.0*i3)]
+#             chi_i = do_fit_higher(guess_i)[0]
+#             mois_i = do_fit_higher(guess_i)[1]
+#             if(chi_i < min_chi):
+#                 print([1.0/(2.0*e) for e in mois_i], chi_i)
+#                 min_chi = chi_i
+print(do_fit_higher([1.0/(2.0*35), 1.0/(2.0*37), 1.0/(2.0*39.0)]))
 
 ############################################################################
 ############################################################################
@@ -110,13 +111,15 @@ def do_fit_lower(guess):
     return x, [e1_lower, e2_lower, e3_lower]
 
 
-min_chi = Models.MAX_VAL
-for i1 in np.arange(10, 125, 15):
-    for i2 in np.arange(11, 125, 15):
-        for i3 in np.arange(12, 125, 15):
-            guess_i = [1.0/(2.0*i1), 1.0/(2.0*i2), 1.0/(2.0*i3)]
-            chi_i = do_fit_lower(guess_i)[0]
-            mois_i = do_fit_lower(guess_i)[1]
-            if(chi_i < min_chi):
-                print([1.0/(2.0*e) for e in mois_i], chi_i)
-                min_chi = chi_i
+print('Lower')
+# min_chi = Models.MAX_VAL
+# for i1 in np.arange(10, 125, 15):
+#     for i2 in np.arange(11, 125, 15):
+#         for i3 in np.arange(12, 125, 15):
+#             guess_i = [1.0/(2.0*i1), 1.0/(2.0*i2), 1.0/(2.0*i3)]
+#             chi_i = do_fit_lower(guess_i)[0]
+#             mois_i = do_fit_lower(guess_i)[1]
+#             if(chi_i < min_chi):
+#                 print([1.0/(2.0*e) for e in mois_i], chi_i)
+#                 min_chi = chi_i
+print(do_fit_lower([1.0/(2.0*20), 1.0/(2.0*21), 1.0/(2.0*33.0)]))
