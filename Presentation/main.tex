@@ -42,7 +42,102 @@
 \frame{\titlepage}
 \begin{frame}
   \frametitle{Table of Contents}
-  \tableofcontents
+\end{frame}
+
+\begin{frame}{Nuclear Deformation}
+  \begin{itemize}
+    \item Most of the nuclei are either \emph{spherical} or \emph{axially symmetric} in their ground-state.
+    \item Deformation parameter $\beta$ (\textit{Bohr, 1969}): preserves axial symmetry
+  \end{itemize}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.99\textwidth]{Figs/nuclear_shapes.png}
+    \caption{\textbf{spherical:} $\beta=0$\ \textbf{prolate:} $\beta>0$\ \textbf{oblate:} $\beta<0$}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Nuclear Triaxiality}
+  \begin{alertblock}{Non-axial shapes}
+    \begin{itemize}
+      \item Deviations from symmetric shapes can occur across the chart of nuclides $\to$ \textbf{triaxial nuclei}.
+      \item The triaxiality parameter $\gamma$ (\textit{Bohr, 1969}): departure from axial symmetry
+    \end{itemize}
+  \end{alertblock}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.42]{Figs/nice_diagram.pdf}
+    \includegraphics[scale=0.19]{Figs/triaxial-shape.pdf}
+    % \caption{The $(\beta,\gamma)$ plane divided into six equivalent parts, depicting nuclear surfaces.}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Fingerprints for Triaxiality}
+  \begin{itemize}
+    \item Stable triaxial nuclei represent a real challenge for experimentalists and theoreticians
+    \item Clear signatures for confirming stable triaxiality in nuclei
+    \begin{enumerate}
+      \item Chiral symmetry breaking (\textit{Frauendorf, 1997})
+      \item \textbf{Wobbling motion} (\textit{Bohr \& Mottelson, 1975})
+    \end{enumerate}
+  \end{itemize}
+  \begin{block}{Wobbling Motion (WM)}
+    \begin{itemize}
+      \item Unique to non-axial nuclei
+      \item Predicted 50 years ago for even-$A$ nuclei
+      \item First experimental evidence for $^{163}$Lu (\textit{Ødegård}, 2001)
+      \item Currently: confirmed wobblers within the mass regions $A\approx[100,130,160,180]$.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Triaxial Rotor Energy}
+  \begin{itemize}
+    \item A triaxial nucleus can rotate about any of the three axes
+    \item Rotation about the axis with \textbf{the largest moment of inertia} (MOI) is energetically the most favorable: $E_\text{rot}\propto\frac{\hbar^2}{2\mathcal{J}_\text{max}}I(I+1 )$
+    \item MOI anisotropy $\rightarrow$ the \emph{main rotation} around $\mathcal{J}_\text{max}$ is disturbed by the other two axes $\rightarrow$ {\color{red}\emph{total motion of the rotating nucleus has an oscillating behavior}}
+  \end{itemize}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.1]{Figs/collective-spectra.pdf}
+    \includegraphics[scale=0.11]{Figs/collective-levels.pdf}
+  \end{figure}
+  \tiny{\textit{Figures from Schönwaßer et al., 2001}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Wobbling Motion}
+\begin{itemize}
+  \item Total angular momentum $\mathbf{I}$ disaligned w.r.t. body-fixed axes
+  \item The a.m. \textbf{precesses} and \textbf{wobbles} around the axis with $\mathcal{J}_\text{max}$
+  \item The precession of $\mathbf{I}$ can increase by \textbf{tilting} 
+  \item Tilting by an energy quanta $\sim$ \emph{vibrational character} $\rightarrow$ \textbf{wobbling phonon} $n_w=0,1,2...$
+\end{itemize}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.42]{Figs/precessional_cone_2.pdf}
+    \includegraphics[scale=0.37]{Figs/wobbling_n_schematic-2.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Wobbling Spectrum}
+\begin{block}{Even-$A$ Nuclei}
+  \begin{itemize}
+    \item Employing the Harmonic Approximation \textit{(Bohr, 1969)}
+    \item $\hat{H}$ composed of a {\color{red}\emph{rotational}} part and {\color{blue}\emph{harmonic oscillation}} (i.e., wobbling) part:
+  \end{itemize}
+  \begin{align}
+    \hat{H}={\color{red}\frac{\hbar^2}{2\mathcal{J}_\text{max}}I(I+1)}+{\color{blue}\hbar\omega_\text{wob}\left(n_w+\frac{1}{2}\right)}\ , n_w=0,1,2,\dots
+    \label{wobbling-hamiltonian-even-A}
+  \end{align}
+\end{block}
+\begin{figure}
+  \includegraphics[scale=0.5]{Figs/wobbling_n_schematic-1.pdf}
+  \includegraphics[scale=0.4]{Figs/wobblingFreq-evenA.pdf}
+\end{figure}
 \end{frame}
 
 %---------------------------------------------------------
