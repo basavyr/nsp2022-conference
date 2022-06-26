@@ -20,7 +20,7 @@ def chi2(exp_data, th_data):
         sum_0 += e/exp_data[i]
     chi = 1.0/len(exp_data+1)*sum_0
     # print(np.sqrt(chi))
-    return chi
+    return np.sqrt(chi)
 
 
 def do_fit(x_data, y_data, guess):
@@ -33,9 +33,9 @@ def do_fit(x_data, y_data, guess):
     p2_fit = fit_parameters[1]
     p3_fit = fit_parameters[2]
 
-    th_data = Models.Model_Energy(x_data, p1, p2, p3)
+    th_data = Models.Model_Energy(x_data, p1_fit, p2_fit, p3_fit)
     chi2_fit = chi2(exp_data, th_data)
-    return chi2_fit, [p1_fit, p2_fit, p3_fit]
+    return chi2_fit, [1.0/(2.0*p1_fit), 1.0/(2.0*p2_fit), 1.0/(2.0*p3_fit)], [p1_fit, p2_fit, p3_fit]
 
 
 ############################################################################
@@ -52,6 +52,8 @@ x_data_136Nd_higher = (
 energies_exp_136Nd_higher = np.concatenate(
     (Nd136.Energy_Band1_Higher, Nd136.Energy_Band2_Higher, Nd136.Energy_Band3_Higher))
 print('Higher')
+print(do_fit(x_data_136Nd_higher, energies_exp_136Nd_higher,
+      [1.0/(2.0*35), 1.0/(2.0*37), 1.0/(2.0*39)]))
 ############################################################################
 ############################################################################
 ############################################################################
@@ -71,6 +73,8 @@ x_data_136Nd_lower = (
 energies_exp_136Nd_lower = np.concatenate(
     (Nd136.Energy_Band1_Lower, Nd136.Energy_Band2_Lower))
 print('Lower')
+print(do_fit(x_data_136Nd_lower, energies_exp_136Nd_lower,
+      [1.0/(2.0*35), 1.0/(2.0*37), 1.0/(2.0*39)]))
 ############################################################################
 ############################################################################
 ############################################################################
