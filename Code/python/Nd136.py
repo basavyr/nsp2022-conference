@@ -56,3 +56,11 @@ Energy_Band3_Higher = np.asarray(
 Phonons_Band1_Higher = [0 for _ in Energy_Band1_Higher]
 Phonons_Band2_Higher = [1 for _ in Energy_Band2_Higher]
 Phonons_Band3_Higher = [2 for _ in Energy_Band3_Higher]
+
+
+if __name__ == '__main__':
+    print(Energy_Band1_Higher)
+    print(Energy_Band2_Higher)
+    print(Energy_Band3_Higher)
+    print(Energy_Band1_Lower)
+    print(Energy_Band2_Lower)
