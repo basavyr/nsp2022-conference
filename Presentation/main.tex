@@ -143,21 +143,65 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Energy spectrum - simple wobbling}
+  \begin{columns}
+    \begin{column}{0.65\textwidth}
+      % \begin{alertblock}{Harmonic Approximation}
+        \begin{itemize}
+          \item Employed an energy spectrum of harmonic type according to Eq. \ref{wobbling-hamiltonian-even-A}:
+          \begin{align}
+            E_{I}={\color{red}\frac{\hbar^2}{2\mathcal{J}_3}I(I+1)}+{\color{blue}\hbar\omega_\text{wob}\left(n_w+\frac{1}{2}\right)}\nonumber
+          \end{align}
+          \item $\hbar\omega_\text{wob}$ - \textbf{wobbling frequency} - linear dependence on $I$ (fixed MOI ordering $\mathcal{J}_3>\mathcal{J}_{1,2}$)
+          \begin{align}
+            {\color{blue}\hbar\omega_\text{wob}(I)=2f(\mathcal{J}_1,\mathcal{J}_2,\mathcal{J}_3)\cdot I}\nonumber
+          \end{align}
+        \end{itemize}
+      % \end{alertblock}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \begin{figure}
+        \begin{center}
+          \includegraphics[scale=0.21]{Figs/triaxial-shapes-even-A.pdf}
+        \end{center}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New Results}
   \begin{itemize}
     \item New experimental measurements show \emph{potential} wobbling candidates in the $A\approx 130$ region
     \item Three even-$A$ are studied with the \emph{simple wobbler} formalism
     \begin{enumerate}
-      \item $^{130}$Ba
-      \item $^{134}$Ce
-      \item $^{136}$Nd
+      \item $^{130}$Ba (\emph{Petrache et al. 2019})
+      \item $^{134}$Ce (\emph{Petrache and Guo, 2016})
+      \item $^{136}$Nd (\emph{Lv et al., 2018})
     \end{enumerate}
     \item Study the excited spectra: \emph{theoretical model checks the data?}
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{New Results for A=130}
+  \frametitle{Model}
+
+  \begin{alertblock}{Harmonic Approximation}
+    \begin{itemize}
+      \item Reproduced the excited spectra for the wobbling bands
+      \item Employ a \emph{free parameter set}: $\mathcal{P}=\left[\mathcal{J}_1,\mathcal{J}_2,\mathcal{J}_3\right]$
+      \item Adopt a fitting procedure:
+      \begin{align}
+        \chi^2=\frac{1}{N_T}\sum_{i=1}^{N_T}\frac{\left(E_\text{exp}^{(i)}-E_\text{th}^{(i)}\right)^2}{E_\text{exp}^{(i)}}
+      \end{align}
+      \item $N_T\ \rightarrow$ total number of wobbling states within the nucleus
+    \end{itemize}
+  \end{alertblock}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{New Results for 130Ba}
   \begin{minipage}{.8\textwidth}
     \begin{block}{Recent findings for even-even nuclei}
       \begin{itemize}
