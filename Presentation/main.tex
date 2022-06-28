@@ -96,8 +96,7 @@
   \frametitle{Triaxial Rotor Energy}
   \begin{itemize}
     \item Rigid body rotational energy: $E_\text{rot}\propto\frac{\hbar^2}{2\mathcal{J}_\text{max}}I(I+1 )$
-    \item A triaxial nucleus can rotate about any of the three axes $\rightarrow$ \emph{rich energy specra spectra}
-    % \item Rotation about the axis with \textbf{the largest moment of inertia} (MOI) is energetically the most favorable: 
+    \item A triaxial nucleus can rotate about any of the three axes $\rightarrow$ \emph{rich energy spectra} 
     \item MOI anisotropy $\rightarrow$ the \emph{main rotation} around $\mathcal{J}_\text{max}$ is disturbed by the other two axes  $\rightarrow$ \textbf{resulting motion of the rotating nucleus has an oscillating behavior}
   \end{itemize}
   \begin{figure}
@@ -207,8 +206,11 @@
       \begin{itemize}
         \item Two wobbling bands have been identified experimentally in \textbf{$^\mathbf{130}$Ba} (\textit{Petrache et al., 2019})
         \item DFT+PRM description of the wobbling motion described the excited spectra (\textit{Chen et al., 2019})
-        \item Stable triaxiality for $\beta=0.24$ and $\gamma=21.5^\circ$
-        % \item Infer spin-dependence for $\mathcal{J}_{1,2,3}$
+        \begin{itemize}
+          \item Reproduced experimental energies
+          \item Obtained deformation parameters self-consistently
+          \item Stable triaxiality for $\beta=0.24$ and $\gamma=21.5^\circ$
+        \end{itemize}
       \end{itemize}
     \end{block}
   \end{minipage}%
@@ -221,7 +223,130 @@
   \end{minipage}
 \end{frame}
 
+\begin{frame}
+  \frametitle{New Results for 130Ba II}
+  \begin{exampleblock}{Results for $^{130}$Ba \textbf{PRELIMINARY!}}
+    \begin{table}
+      \centering
+      \begin{tabular}{|c|c|c|c|}
+      \hline
+      $\mathcal{J}_1^\text{fit}$ & $\mathcal{J}_2^\text{fit}$ & $\mathcal{J}_3^\text{fit}$ & \multirow{2}{*}{$\left[\hbar^2\text{MeV}^{-1}\right]$} \\ \cline{1-3}
+      27                         & 22                         & $\mathbf{43}$                         &                                                       \\ \hline
+      \end{tabular}
+      \end{table}
+      \begin{itemize}
+        \item Maximal MOI is $\mathcal{J}_3$, $\mathcal{J}_{3}>\mathcal{J}_{1,2}$
+      \end{itemize}
+\end{exampleblock}
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.39]{Figs/ba130-band1.pdf}
+  \includegraphics[scale=0.39]{Figs/ba130-band2.pdf}
+\end{figure}
+\end{frame}
 
+\begin{frame}
+  \frametitle{Electromagnetic Transitions 130Ba}
+
+\begin{itemize}
+  \item In the harmonic approximation, the three MOI are used to determine $B(E2)_\text{out}$
+  \item $\beta_2$ and $\gamma$ are taken from Chen et al. $\rightarrow$ $(\beta,\gamma)=0.24,21.5^\circ$ $\rightarrow$ used to calculate the quadrupole components $Q_20$ and $Q_22$
+  \item $B(E2)_\text{out}(I)=\frac{5}{16\pi}I^{-1}\left(\sqrt{3}Q_{20}\cdot f(\mathcal{J})+\sqrt{2}Q_{22}\cdot g(\mathcal{J})\right)$
+\end{itemize}
+\begin{columns}
+\begin{column}{0.3\textwidth}
+  \begin{table}
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|c|ccc|}
+      \hline
+      \multirow{2}{*}{$I$} & \multicolumn{3}{c|}{$B(E2)_\text{out}/B(E2)_\text{in}$}                          \\ \cline{2-4} 
+      & \multicolumn{1}{c|}{Th.} & \multicolumn{1}{c|}{PRM*} & Exp. \\ \hline
+      11                   & \multicolumn{1}{c|}{0.37}       & \multicolumn{1}{c|}{-}           & -             \\ \hline
+      13                   & \multicolumn{1}{c|}{0.32}       & \multicolumn{1}{c|}{0.51}       & 0.32         \\ \hline
+      15                   & \multicolumn{1}{c|}{0.27}       & \multicolumn{1}{c|}{0.42}       & 0.36         \\ \hline
+      17                   & \multicolumn{1}{c|}{0.24}       & \multicolumn{1}{c|}{0.35}       & 0.22         \\ \hline
+      19                   & \multicolumn{1}{c|}{0.21}       & \multicolumn{1}{c|}{0.29}       & 0.22         \\ \hline
+      21                   & \multicolumn{1}{c|}{0.19}       & \multicolumn{1}{c|}{0.25}       & 0.41         \\ \hline
+      23                   & \multicolumn{1}{c|}{0.18}       & \multicolumn{1}{c|}{-}           &  -            \\ \hline
+      25                   & \multicolumn{1}{c|}{0.16}       & \multicolumn{1}{c|}{-}           &  -            \\ \hline
+    \end{tabular}%
+    }
+  \end{table}
+\end{column}
+\begin{column}{0.7\textwidth}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{Figs/ba130-EM.pdf}
+  \end{figure}
+  \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New Results for 134Ce}
+\begin{columns}
+  \begin{column}{0.4\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[scale=0.15]{Figs/triaxial-shapes-ce-134.png}
+    \end{figure}
+  \end{column}
+  \begin{column}{0.6\textwidth}
+    \begin{itemize}
+      \item Petrache et al. found two sets of wobbling bands in $^{134}$Ce
+      \item Wobbling confirmed in odd-$A$ $^{135}$Pr by Matta et al. 2015 $\rightarrow$ \emph{even-$A$ neighbor also with wobbling character?}
+      \item The \emph{isomer structure} is based on a $10^+$ level with lower quadrupole deformation but higher life-time
+    \end{itemize}
+  \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New Results for 134Ce II}
+  \begin{itemize}
+    \item Separate fitting procedures for the \emph{isomer} and \emph{deformed}
+    \item Isomer: $(\beta,\gamma)=(0.14,-35^\circ)$
+    \item Deformed: $(\beta,\gamma)=(0.22,25^\circ)$
+    \begin{figure}
+      \centering
+      \includegraphics[scale=0.5]{Figs/134Ce-excitation-isomer.pdf}
+      \includegraphics[scale=0.5]{Figs/134Ce-excitation-deformed.pdf}
+    \end{figure}
+    \item isomer: $\mathcal{J}_1:\mathcal{J}_2:\mathcal{J}_3\to 14:21:\mathbf{34}\ \hbar^2\text{MeV}^{-1}$ 
+    \item deformed: $\mathcal{J}_1:\mathcal{J}_2:\mathcal{J}_3\to 15:23:\mathbf{42}\ \hbar^2\text{MeV}^{-1}$
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New Results for 136Nd}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[scale=0.1]{Figs/triaxial-shapes-136Nd.png}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.6\textwidth}
+      \begin{itemize}
+        \item Lv et al. found two sets of wobbling bands in $^{136}$Nd $\rightarrow$ worth investigating $A=137$ neighbor nuclei ?
+        \item \emph{low}/\emph{high} is used to differentiate the energy of $10^+$ state of each structure
+        \item The higher structure has two phonon excitations
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{New Results for 136Nd II}
+\begin{itemize}
+  \item Separate fitting for each structure (low/high)
+  \item Low: $(\beta,\gamma)=(0.15,-35^\circ)$
+  \item High: $(\beta,\gamma)=(0.21,25^\circ)$
+\end{itemize}
+  
+
+\end{frame}
 
 %---------------------------------------------------------
 \end{document}
